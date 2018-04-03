@@ -6,10 +6,10 @@
 	$tasks = $database->fetchAll('tasks');
 
 	$tasks = array_map(function($task){
-		return new Task($task->description, $task->status);
+		return new Task($task->description, $task->status, $task->date);
 	},$tasks);
 
-	array_push($tasks, new Task('Go to bed', false));
+	array_push($tasks, new Task('Go to bed', false, date('Y-m-d')));
 
 
 

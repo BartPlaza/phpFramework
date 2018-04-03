@@ -9,9 +9,9 @@ require_once 'header.view.php';
 	<?php foreach($tasks as $task) : ?>
 		<li>
 			<?php if ($task->getStatus()) : ?>
-				<strike><?= $task->getDescription() ?></strike>
+				<strike><?= "{$task->getDescription()} : {$task->getDate()}"?></strike>
 			<?php else : ?>
-				<b><?= $task->getDescription() ?></b>
+				<b><?= "{$task->getDescription()} : {$task->getDate()}" ?></b>
 			<?php endif; ?>
 		</li>
 	<?php endforeach; ?>
